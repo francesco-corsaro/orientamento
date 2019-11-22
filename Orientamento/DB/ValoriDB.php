@@ -17,17 +17,18 @@ $id=$_SESSION['id'];
 for ($i = 0; $i < 13; $i++) {
     require 'DB/configDB.php';
     $flag=$arr1[$arrK[$i]];
+    $flag1=$arrK[$i];
 //$conn->close();
 //require 'DB/configDB.php';
-$sql= "UPDATE valori SET $arrK[$i]='$flag' WHERE Id=$id";
+$sql= "UPDATE valori SET $flag1='$flag' WHERE Id=$id";
     
-    if ($conn->query($sql) === TRUE) {
+   /* if ($conn->query($sql) === TRUE) {
         $stato1 = "Valori aggiornati con successo!";
         return $stato1;
     } else {
         $stato1 =  "Error updating record: " . $conn->error;
         return $stato1;
-    }
+    }*/
 
 
 $conn->close();
