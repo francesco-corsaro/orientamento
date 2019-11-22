@@ -1,8 +1,9 @@
 <?php session_start();
+/*
 $_POST['punntiit'];
 $_SESSION['interessi']=array();
 array_push ($_SESSION['interessi'],$_POST['punntint']) ;
-
+*/
 $_SESSION['materie'];
 $_SESSION['categorie'];
 $cat=array(professionali,Agricoltura,trasporti,polizia,segreteria,commerciale,servsoc,educazione,sciumane,salute,matematica,informatica,arte,edfis);
@@ -29,7 +30,9 @@ $cat=array(professionali,Agricoltura,trasporti,polizia,segreteria,commerciale,se
 <div class="col-12 tenda">
     <h2>Materie</h2>
     <p>Le materie che più ti piacciono sono:
-    <?php foreach ($_SESSION['materie'] as $materia){
+    <?php 
+    /*var_dump($_SESSION['materie']);*/
+    foreach ($_SESSION['materie'] as $materia){
         echo '|'.$materia.' |';
     }
         
@@ -55,7 +58,10 @@ $cat=array(professionali,Agricoltura,trasporti,polizia,segreteria,commerciale,se
        $l++;
        }
     ?></p>
- </div>   
+ </div>  
+ <div class="col-12 tenda">
+  <?php var_dump($_SESSION['materie'][0]) ?>
+  </div> 
 <div class="col-12 tenda">
     <h2>Dimensioni RIASEC</h2>
     

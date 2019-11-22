@@ -1,8 +1,8 @@
 <?php session_start();
 
-$_SESSION['controllo']
+$_SESSION['controllo'] //riceve un valore dal file di controllo
 ?>
-<?php 
+<?php  //creo le variabili contenenti la descrizione della categoria
 $professionali=" La caratteristica principale che inquadra le attività svolte dai professionisti appartenenti a questo gruppo è l'abilità manipolativa come competenza di maggior valore per l'esecuzione di questi lavori, i mestieri. Occasionalmente sono utilizzati macchinari e strumenti specifici, ma l'abilità manipolativa è essenziale. Esempio barbiere, vetraio, sarta, tappezziere, fabbro, orologiaio, gioielliere,muratore, stuccatore, ecc";
 $agricoltura= "Attività svolte in terreni, gestire il bestiame, pescare Es: Agricoltura, zootecnia, orticoltura, floricoltura, miniere, taglio della pietra, pesca,esperti in lavori agricoli, agenti forestali, ecc.";
 $trasporti= "Professioni relative al trasporto terrestre, marittimo o aereo di viaggiatori o merce. Es: autista di autobus, camionista, tassista, ferrovia,Autista della metropolitana, capitano della nave mercantile, ufficiale della nave da crociera, pilota civile,eccetera";
@@ -24,7 +24,7 @@ $edfis="Sportivo professionista, insegnante di educazione fisica, allenatore spo
 
 <title>orientamento</title>
 
-<?php require 'style.php';?>
+<?php require 'style.php';?> 
 </head>
 <body>
 <div class="col-5">
@@ -35,14 +35,15 @@ $edfis="Sportivo professionista, insegnante di educazione fisica, allenatore spo
     <p class="r">1)Leggi attentamente ciascuna delle quattordici categorie professionali incluse,</p>
     <p class="r">2)Dopo un'attenta analisi,clicca sul quadrato in alto a sinistra e seleziona 4 categorie con le quali ti senti più identificato.</p>
 </div>	
-<?php if ($_SESSION['controllo']==1) {
+<?php // riceve un valore dal file di controllo per informare dell'errore da parte dell'utente
+    if ($_SESSION['controllo']==1) {
     
-    echo '<div class="col-12 errore"> Hai inserito più di 4 categorie.Seleziona <b class="errore"> solo 4</b> categorie</div>';
-}elseif ($_SESSION['controllo']==2) {
-    echo '<div class="col-12 errore"> Hai inserito meno di 4 categorie.Seleziona <b class="errore"> solo 4</b> categorie</div>';
- }?>																														
+        echo '<div class="col-12 errore"> Hai inserito più di 4 categorie.Seleziona <b class="errore"> solo 4</b> categorie</div>';
+        }elseif ($_SESSION['controllo']==2) {
+            echo '<div class="col-12 errore"> Hai inserito meno di 4 categorie.Seleziona <b class="errore"> solo 4</b> categorie</div>';
+    }?>																														
 <div class="col-12">
-    <form action="/Orientamento/controllocategorie.php" method="post"  >
+    <form action="/Orientamento/ContrForm/controllocategorie.php" method="post"  >
      
             <div class="col-12 tenda">
                 <label class="container"><br />

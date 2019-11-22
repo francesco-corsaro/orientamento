@@ -1,10 +1,14 @@
 <?php session_start();
 $_POST['p'];
+require 'ContrForm/ControlMaterie.php';
+require 'DB/MaterieDB.php';
+/*
 $_SESSION['materie']=array();
 while(list($chiave,$materia)=each($_POST['p'])){
     array_push ($_SESSION['materie'],$materia) ;
     
-}
+    
+} */
 $comp_prof=array(
     Artistica=>' attitudine per disegno, pittura, decorazione, scultura, design, ecc.Percezione estetica e apprezzamento della bellezza. Creatività, immaginazione',
     Numerica=>' velocità e precisione lavorando con i numeri, facendo operazioni di aritmetica, raccolta di dati o misurazioni, analisi di statistiche, ecc.',
@@ -52,7 +56,9 @@ Leggili attentamente, e rifletti su quanto possiedi ogni abilità. Per ognuna st
 <br>
 <p><input type="submit" value="Invia"/></p>
 </form>
-
+<div class="col-12 tenda">
+<?php echo $stato ;?>
+</div>
 
 <br>
 <a href="risultati.php">Risultati</a>

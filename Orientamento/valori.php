@@ -1,7 +1,13 @@
 <?php session_start();
 $_POST['punti'];
 $_SESSION['competenzeprofessionali']=array();
+
 array_push ($_SESSION['competenzeprofessionali'],$_POST['punti']) ;
+/*creo un array da inviare al database
+*/
+$arr1=array();
+$arr1=$_POST['punti'];
+require 'DB/InsertCompetenze.php';
 $valori=array(
     Disponibilita_di_tempo_libero=>" <strong>Disponibililtà di tempo libero</strong> |avere un'occupazione che consente un orario flessibile, per poterlo combinare con altre attività.",
     Indipendenza=>" essere in grado di completare autonomamente le attività professionali, consentendo il raggiungimento delle proprie idee, convinzioni; sviluppando prospettive o protocolli d'azione per raggiungere gli obiettivi o i risultati richiesti.",
@@ -45,8 +51,9 @@ Leggi la lista presentata e stabilisci un punteggio da 0 a 100. Il punteggio 100
           
  }
 ?>
-
-
+<div class="col-12 tenda">
+<?php echo $stato ;?>
+</div>
 <br>
 <p><input type="submit" value="Invia"/></p>
 </form>

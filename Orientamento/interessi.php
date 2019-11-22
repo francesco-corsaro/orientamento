@@ -2,6 +2,8 @@
 $_POST['punti1'];
 $_SESSION['valori']=array();
 array_push ($_SESSION['valori'],$_POST['punti1']) ;
+require 'DB/IdValori.php';
+require 'DB/ValoriDB.php';
 $interessi=array(
     
     "Quando realizzo un lavoro o un compito me piace farlo in maniera originale, in una forma differente rispetto alla maggior parte delle persone",
@@ -56,7 +58,7 @@ Segna per ognuna delle affermazioni il grado di accordo nel seguente modo:<br>
 <li>Completamente d'accordo = 3</li>
 </ul>
 </div>
-<form action="risultati.php" method="post"  >
+<form action="LoadDB.php" method="post"  >
 <?php 
 
 $chiave='1';
@@ -94,7 +96,9 @@ $chiave='1';
 <br>
 <p><input type="submit" value="Invia"/></p>
 </form>
-
+<div class="col-12 tenda">
+<?php echo $stato.' | '.$stato1;?>
+</div>
 
 <br>
 <a href="risultati.php">Risultati</a>
